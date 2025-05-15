@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 @font-face {
     font-family: 'Montserrat';
     src: url('../assets/font/montserrat/Montserrat-VariableFont_wght.ttf');
@@ -12,11 +17,970 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Aleo';
+    src: url('../assets/font/aleo/Aleo-VariableFont_wght.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aleo';
+    src: url('../assets/font/aleo/Aleo-Italic-VariableFont_wght.ttf');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+
+/* Design */
 body {
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     background-color: #f3f3f3;
 }
 
-h1 {
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
+}
+
+.marketing-copy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 1em .7em;
+    font-size: .8em;
+    color: white;
+}
+
+.container-nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Logo - Menu - Icon */
+  align-items: center;
+  padding: 1em 4em;
+  margin: .7em 1em ;
+  background: white;
+  border-radius: 1.5em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  gap: 1em;
+}
+
+.logo-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .25em;
+    justify-self: start;
+}
+
+.logo-brand svg {
+    cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 3.5em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-icon {
+  display: flex;
+  justify-content: center;
+  justify-self: end;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-menu li {
+    list-style-type: none;
+    transition: all .3s ease;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-menu li a.primary-button {
+    color: blue;
+}
+
+.hover-nav:hover li {
+    opacity: 0.5;
+}
+
+.hover-nav li:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.notif-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.cart-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+main .hero-image {
+    background-image: url('../assets/img/hero-img2.webp');
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 0;
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Ubah opacity sesuai kebutuhan */
+  z-index: 1;
+}
+
+main .hero-image .container-hero-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 80%;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+main .hero-image .container-hero-image .text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5em;
+    padding-right: 2em;
+    line-height: 2em;
+}
+
+main .hero-image .container-hero-image .text-box span {
+    background-color: #005bd3;
+    padding: .2em .5em;
+    font-size: .7em;
+    border-radius: .5em;
+}
+
+main .hero-image .container-hero-image .text-box h1 {
+    font-size: 3em;
+}
+
+main .hero-image .container-hero-image .text-box h2 {
+    font-size: 2em;
+}
+
+.shop-button {
+    background-color: white;
+    color: black;
+    border-radius: .5em;
+    font-size: 1em;
+    padding: .8em 1.3em;
+    border: 0;
+    font-weight: bold;
+    font-family: 'Montserrat';
+    text-decoration: none;
+    z-index: 2;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+main .shop-by-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 4em 0;
+}
+
+main .shop-by-category h2 {
+    font-size: 2.8em;
+}
+
+main .container-category-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin-top: 1em;
+    width: 85%;
+}
+
+main .container-category-box .category-box {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 6em;
+    color: white;
+    padding-left: 1.8em;
+    border-radius: 1em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+main .container-category-box .category-box a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.8em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+main .container-category-box .bg-cases {
+    background-image: url('/assets/img/Desktop_Navigation_Cards_-_Cases_EnglishTanFullWrap_02.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main .container-category-box .bg-apple-watch {
+    background-image: url('/assets/img/Desktop_Navigation_Cards_-_SportBands_UltraOrange_1ff65647-6d4e-4cbd-b6e0-717d3c432fce.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main .container-category-box .bg-charging {
+    background-image: url('/assets/img/Desktop_Navigation_Cards_-_Charging_B1M_02.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main .container-category-box .bg-best-sellers {
+    background-image: url('/assets/img/00_Mobile_Navigation_Cards_Tracking_Card.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main .curently-trending-gear {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 7.5em 0 3em;
+}
+
+main .curently-trending-gear h2 {
+    font-size: 2.8em;
+}
+
+main .curently-trending-gear .container-trending-gear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.product-box {
+    width: 20em;
+    height: 26em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .img-product-watch {
+    background-image: url('/assets/img/watch.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .img-product-watch:hover {
+    background-image: url('/assets/img/watch_hover.webp');
+}
+
+.product-box .text-product {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding-top: .7em;
+    gap: .1em;
+    cursor: pointer;
+}
+
+.product-box .text-product p {
+    font-weight: 500;
+    font-size: .9em;
+}
+
+.product-box .color-variant {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    gap: .5em;
+    padding: .7em 1em;
+}
+
+.color-variant .variant {
+    width: .9em;
+    height: .9em;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .color-variant .atlantic {
+    background-color: darkblue;
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .color-variant .sol {
+    background-color: rgb(255, 204, 75);
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .color-variant .storm {
+    background-color: darkslategray;
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .color-variant .forest {
+    background-color: darkolivegreen;
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .color-variant .magma {
+    background-color: darkorange;
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .img-product-case {
+    background-image: url('/assets/img/case.avif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+    transition: all 0.2s ease;
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .img-product-case:hover {
+    background-image: url('/assets/img/case_hover.webp');
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .color-variant .black {
+    background-color: black;
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .color-variant .rustic-brown {
+    background-color: rgb(104, 49, 49);
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .img-product-adapter {
+    background-image: url('/assets/img/adapter.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+    transition: all 0.2s ease;
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .img-product-adapter:hover {
+    background-image: url('/assets/img/adapter_hover.webp');
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .carbide {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: .7em;
+}
+
+main .curently-trending-gear .container-trending-gear .product-box .carbide span {
+    background-color: rgb(241, 235, 235);
+    padding: .5em 1em;
+    font-size: .7em;
+    font-weight: bold;
+    border-radius: .5em;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.shop-now-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.3em 0;
+}
+
+.shop-now-button a {
+    display: inline-block;
+    text-decoration: none;
+    padding: .9em 1.2em;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border-radius: .7em;
+    box-shadow:5px 5px rgba(109, 108, 108, 0.2);
+    border: 1px solid white;
+}
+
+main .watch-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .watch-banner .container-watch-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* dua kolom yang setara */
+    align-items: center;
+    width: 85%;
+    background-color: #fff;
+    border-radius: 1.5em;
+    margin-bottom: 1.5em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+main .watch-banner .watch-banner-img {
+    width: 100%;
+    height: 100%;
+}
+
+main .watch-banner .watch-banner-img img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 1.5em;
+    border-bottom-left-radius: 1.5em;
+}
+
+main .watch-banner .watch-banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+main .watch-banner .watch-banner-text h2 {
+    font-size: 4.3em;
+    text-align: center;
+    line-height: 1;
+}
+
+main .highlight-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .highlight-product .container-highlight-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    width: 85%;
+    margin-bottom: 6em;
+}
+
+main .highlight-product .container-highlight-product .highlight-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 28em;
+    border-radius: 2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+main .highlight-product .container-highlight-product .highlight-box span {
+    font-size: 3em;
+    color: #fff;
+}
+
+main .highlight-product .container-highlight-product .new-arrivals {
+    background-image: url('/assets/img/blue-watch.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main .highlight-product .container-highlight-product .leather-gear {
+    background-image: url('/assets/img/leather-case.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main .highlight-product .container-highlight-product .deeper-discount {
+    background-image: url('/assets/img/depeer-discount.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main .quote-ceo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10em;
+}
+
+main .quote-ceo .container-quote-ceo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5em;
+    width: 70%;
+}
+
+main .quote-ceo .container-quote-ceo h6 {
+    font-family: 'Aleo', sans-serif;
+    font-size: 1.4em;
     font-weight: 400;
+}
+
+main .quote-ceo .container-quote-ceo h4 {
+    font-size: 1.4em;
+}
+
+main .essentials-on-sale {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+main .essentials-on-sale h2 {
+    font-size: 2.8em;
+    margin-bottom: 1em;
+}
+
+main .essentials-on-sale .container-essentials-on-sale {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .img-product-modern-leather {
+    background-image: url('/assets/img/modern-leather.webp');
+    background-color: #f3f3f3;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .img-product-modern-leather:hover {
+    background-image: url('/assets/img/modern-leather-hover.webp');
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .img-product-charge-mount {
+    background-image: url('/assets/img/charge-mount.webp');
+    background-color: #f3f3f3;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .img-product-charge-mount:hover {
+    background-image: url('/assets/img/charge-mount-hover.webp');
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .img-product-rugged-case {
+    background-image: url('/assets/img/rugged-case.webp');
+    background-color: #f3f3f3;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    border-radius: .5em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .img-product-rugged-case:hover {
+    background-image: url('/assets/img/rugged-case-hover.webp');
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .text-product .more-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: .4em;
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .text-product .more-info .price {
+    font-weight: normal;
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .text-product .more-info .price .normal-price {
+    color: rgb(175, 175, 175);
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .text-product .more-info .color-variant {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .text-product .more-info .color-variant .black {
+    background-color: #000;
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .text-product .more-info .color-variant .brown {
+    background-color: brown;
+}
+
+main .essentials-on-sale .container-essentials-on-sale .product-box .text-product .more-info .color-variant .english-tan {
+    background-color: rgb(207, 152, 79);
+}
+
+main .essentials-on-sale .shop-now-button {
+    margin-top: 2.5em;
+}
+
+main .highlight-product .second {
+    margin-bottom: .7em;
+}
+
+main .highlight-product .container-highlight-product .second {
+    height: 16em;
+    border-radius: 1.2em;
+} 
+
+main .highlight-product .container-highlight-product .lifestyle-gear {
+    background-image: url('/assets/img/lifestyle-gear-2.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main .highlight-product .container-highlight-product .ip-15 {
+    background-image: url('/assets/img/ip15-2.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main .highlight-product .container-highlight-product .airpods {
+    background-image: url('/assets/img/airpods.-2jpg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+main .highlight-product .container-highlight-product .rugged-case {
+    background-image: url('/assets/img/rugged_case-2.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main .videotron {
+  position: relative;
+  width: 85%;
+  height: 25em;
+  margin: 0 auto 1.5em;
+  overflow: hidden;
+  border-radius: 1.2em;
+}
+
+main .videotron .container-videotron {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+main .videotron .bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+main .videotron .videotron-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+main .videotron .videotron-content h1 {
+  font-size: 3em;
+  margin-bottom: .2em;
+}
+
+main .highlight-product .container-highlight-product .about-us {
+    position: relative;
+    background-image: url('/assets/img/about-us.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 1;
+}
+
+main .highlight-product .container-highlight-product .about-us h3 {
+    font-size: 4em;
+    color: white;
+    z-index: 2;
+}
+
+main .highlight-product .container-highlight-product .about-us span {
+    font-size: 2em;
+    color: white;
+    z-index: 2;
+}
+
+main .highlight-product .container-highlight-product .commitment {
+    position: relative;
+    background-image: url('/assets/img/comitment.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+main .highlight-product .container-highlight-product .commitment h3 {
+    font-size: 4em;
+    color: white;
+    z-index: 2;
+}
+
+main .highlight-product .container-highlight-product .commitment span {
+    font-size: 2em;
+    color: white;
+    z-index: 2;
+}
+
+main .highlight-product .third {
+    margin-bottom: 3em;
+}
+
+main .highlight-product .container-highlight-product .third {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1.2em;
+    margin-bottom: 0;
+}
+
+main .highlight-product .container-highlight-product .third a {
+    margin-top: 1em;
+}
+
+footer {
+    width: 100%;
+    background-image: url('/assets/img/footer-background-XRPHEXQB.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .container-footer {
+    width: 65%;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .container-footer .footer-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4em;
+}
+
+footer .container-footer .footer-1 .footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+
+footer .container-footer .footer-1 .footer-nav ul li {
+    line-height: 2em;
+    font-family: 'Aleo', sans-serif;
+    list-style: none;
+    font-weight: 400;
+    font-size: .9em;
+    cursor: pointer;
+}
+
+footer .container-footer .footer-1 .footer-nav ul li.heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    cursor: default;
+}
+
+footer .container-footer .footer-1 .email-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+}
+
+footer .container-footer .footer-1 .email-us p {
+    font-family: 'Aleo', sans-serif;
+    font-size: .85em;
+    font-weight: 400;
+}
+
+footer .container-footer .footer-1 .email-us form {
+  display: flex;
+  gap: 1em;
+}
+
+footer .container-footer .footer-1 .email-us form input {
+    background: #fff;
+    border: none;
+    padding: .8em 1.6em;
+    border-radius: .7em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer .container-footer .footer-1 .email-us form input:focus {
+    border: none;
+    outline: none;
+}
+
+footer .container-footer .footer-1 .email-us form button {
+    background: #fff;
+    padding: .8em 1.6em;
+    border-radius: .7em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer .container-footer .footer-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #9e9e9e;
+    margin-bottom: 1em;
+}
+
+footer .container-footer .footer-2 .social-media {
+    display: flex;
+    gap: .5em;
+}
+
+footer .container-footer .footer-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-weight: normal;
+    font-family: 'Aleo', sans-serif;
+}
+
+footer .container-footer .footer-3 .copyright {
+    font-size: .9em;
+    color: rgb(82, 81, 81);
+}
+
+footer .container-footer .footer-3 .terms {
+    display: flex;
+    gap: 1em;
+    color: rgb(82, 81, 81);
+    font-size: .9em;
+}
+
+footer .container-footer .footer-3 .terms a {
+    text-decoration: none;
+    color: gray;
 }
